@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('football', '0001_initial'),
+        ('voyage', '0001_initial'),
     ]
 
     operations = [
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('firstname', models.CharField(max_length=30)),
                 ('lastname', models.CharField(max_length=30)),
-                ('team', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='football.team')),
+                ('team', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='voyage.team')),
             ],
         ),
     ]

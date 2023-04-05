@@ -7,7 +7,7 @@ from .forms import TeamForm, PlayerForm
 # Create your views here.
 def home(request):
     
-    return render(request, "football/index.html")
+    return render(request, "voyage/index.html")
 
 def teams(request):
     
@@ -15,7 +15,7 @@ def teams(request):
        
     context = {"teamsList" : teamsList}
     
-    return render(request, "football/showTeams.html", context)
+    return render(request, "voyage/showTeams.html", context)
 
 def playersMan(request, team_id):
     
@@ -28,7 +28,7 @@ def playersMan(request, team_id):
     # it is always <lower case name of the related class>_set
     context = {'players' : playersList, 'team' : teamObj}
     
-    return render(request, 'football/playersManUnited.html', context)
+    return render(request, 'voyage/playersManUnited.html', context)
 
 def addTeam(request):
     
@@ -47,11 +47,11 @@ def addTeam(request):
             
             new_team.save()
             
-            return redirect('football:teams')
+            return redirect('voyage:teams')
     
     context = {'form': form} # executed if the form was not valid
     
-    return render(request, 'football/new_team.html', context)
+    return render(request, 'voyage/new_team.html', context)
 
 def addPlayer(request):
     
@@ -66,18 +66,18 @@ def addPlayer(request):
             
             form.save()
             
-            return redirect('football:teams')
+            return redirect('voyage:teams')
     
     context = {'form': form} # executed if the form was not valid
     
-    return render(request, 'football/new_player.html', context)
+    return render(request, 'voyage/new_player.html', context)
 
 
 
 
 def sumComputation(request):
     
-    return render(request, 'football/insertNumbers.html')
+    return render(request, 'voyage/insertNumbers.html')
 
 def computeSum(request):
     
@@ -89,9 +89,9 @@ def computeSum(request):
     
     print(result)
     
-    context = {"first" : first, "second" : second, "result" : result}
+    context = {"final" : first, "second" : second, "result" : result}
     
-    return render(request, 'football/showResult.html', context)
+    return render(request, 'voyage/showResult.html', context)
     
     
     

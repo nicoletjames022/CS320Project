@@ -1,4 +1,4 @@
-"""first URL Configuration
+"""final URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -19,7 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
-    path('', include('football.urls'))
+    path('', include('voyage.urls'))
 ]
 
 

@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("football", "0002_player"),
+        ("voyage", "0002_player"),
     ]
 
     operations = [
