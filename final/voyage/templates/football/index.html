@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+
+    <head>
+    </head>
+    
+    <body>
+        <h1>
+        Football project
+        </h1>
+        
+        {% if user.is_authenticated %}
+        
+        <p>
+        Welcome {{user.username}}, this is our first project! <br>
+        
+        <img src = "{% static 'football/summer.jpg' %}" width = 100 height = 150> <br>
+        
+        You can find all our teams 
+        <a href = "{% url 'football:teams' %}">here</a> 
+        <br><br>
+        You can logout from <a href = "{% url 'users:logout' %}">here</a>.
+        </p>
+        
+        {% else %}
+        
+        <p>This page is only accessible if you are authenticated. 
+        Please <a href = "{% url 'users:login' %}">log in</a>.
+        
+        {% endif %}
+        
+    </body>
+    
+</html>

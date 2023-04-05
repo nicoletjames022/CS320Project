@@ -1,0 +1,38 @@
+<html>
+
+    <head>
+    </head>
+    
+    <body>
+        <h1>
+        Football project
+        </h1>
+        
+        <p>
+        Here are our teams:
+        </p>
+        
+        
+        <ul>
+            
+            {% for x in teamsList %}
+            
+            <li>
+                <a href = "{% url 'football:playersMan' x.id  %}">{{x}}</a>
+            </li>
+            
+            {% endfor %}
+        
+        </ul>
+        
+        <p>Clic <a href = "{% url 'football:addTeam' %}">here</a> to insert a new team.</p>
+        
+        
+        <!-- comment -->
+        
+        
+        
+        
+    </body>
+    
+</html>
