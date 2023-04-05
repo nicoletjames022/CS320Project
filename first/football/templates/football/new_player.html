@@ -1,0 +1,28 @@
+<html>
+
+    <head>
+    </head>
+    
+    <body>
+        <h1>
+        Football project
+        </h1>
+        
+        <p>
+        Insert data for your player: 
+        </p>
+        
+        <form action = "{% url 'football:addPlayer' %}" method = "POST">
+            
+            {% csrf_token %}
+            
+            {{form.as_p}}
+            
+            <button>Submit!</button>
+        
+        </form>
+        
+        
+    </body>
+    
+</html>
