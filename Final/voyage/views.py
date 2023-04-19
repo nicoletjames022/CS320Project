@@ -17,3 +17,4 @@ def days(request,day_id ):
     context = {'days': dayList}
     
     return render(request, 'voyage/.html', context)
+
