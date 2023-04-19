@@ -9,12 +9,13 @@ def trips(request):
     return render(request, 'voyage/trips.html', context)
 
 
-def days(request,day_id ):
-    dayObj = Day.objects.get(id = day_id)
+def days(request, trip_id):
+   
+    tripObj = Trip.objects.get(id = trip_id)
     
-    dayList = dayObj.
+    daysList = tripObj.day_set.all()
     
-    context = {'days': dayList}
+    context = {'days': daysList}
     
     return render(request, 'voyage/.html', context)
 
