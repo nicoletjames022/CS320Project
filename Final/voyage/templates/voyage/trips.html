@@ -1,10 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<h1>Trips</h1>
-<p>These are all the trips in our database</p>
-    <ul>
-    {% for trip in trips %}
-    <li>{{trip}}</li>
-    {% endfor %} </ul>
+    <head>
+        <link rel="stylesheet" href="{% static 'myfirst.css' %}">
+    </head>
+    <body>
+        <h1>Trips</h1>
+
+        <p>These are all the trips in our database</p>
+        <ul>
+        {% for trip in trips %}
+        <li>{{trip}}</li>
+        {% endfor %} </ul>
+    </body>
 
 </html>
