@@ -5,7 +5,7 @@ class Trip(models.Model):
     
     destination = models.CharField(max_length=30)
     
-    time = models.CharField(max_length=30)
+    time = models.IntegerField(max_length=7)
     
     def __str__(self):
         
@@ -23,7 +23,7 @@ class Transportation(models.Model):
     
 class Lunch(models.Model):
     
-    name_restourant_lunch = models.CharField(max_length=30)
+    name_restaurant_lunch = models.CharField(max_length=30)
     
     cost_lunch = models.IntegerField(max_length=1000)
     
@@ -36,7 +36,7 @@ class Lunch(models.Model):
 
 class Dinner(models.Model):
     
-    name_restourant_dinner = models.CharField(max_length=30)
+    name_restaurant_dinner = models.CharField(max_length=30)
     
     cost_dinner = models.IntegerField(max_length=100)
     
@@ -57,3 +57,17 @@ class Activities(models.Model):
     def __str__(self):
         
         return self.destination
+    
+class Day(models.Model):
+    
+    activity_ID= models.ForeignKey(Activities, on_delete= models.CASCADE)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
