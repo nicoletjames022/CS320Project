@@ -1,4 +1,4 @@
-#!/Users/nicolejames/Documents/GitHub/CS320Project/Final/.venv/bin/python3
+#!/Users/nicolejames/Documents/GitHub/CS320Project/Final/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
