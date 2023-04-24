@@ -8,11 +8,13 @@
         <h1>Trips</h1>
 
         <p>These are all the trips in our database</p>
-        <ul>
-            {% for trip in trips %}
-            <li>{{trip}}</li>
-            {% endfor %} 
-        </ul>
+        <div>
+            <ul>
+                {% for trip in trips %}
+                <li><a href="{% url 'voyage:showTrip' trip.id %}">{{trip}}</a></li>
+                {% endfor %} 
+            </ul>
+        </div>
 
         <form action="{% url 'voyage:addTrip' %}" method='post'>
             {% csrf_token %} 

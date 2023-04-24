@@ -21,7 +21,11 @@ def addTrip(request):
             return redirect('voyage:trips')
     context = {'form': form} 
     return render(request, 'voyage/trips.html', context)
-    
+
+def showTrip(request, trip_id):
+    tripObj = Trip.objects.get(id=trip_id); 
+    context = {'trip' : tripObj}
+    return render(request, 'voyage/showTrip.html', context)
 
 def days(request, trip_id):
    
