@@ -11,11 +11,23 @@ class Trip(models.Model):
         
         return self.destination
 
+class Day(models.Model):
+    
+    trip_id= models.ForeignKey(Trip, on_delete= models.CASCADE)
+    
+    date = models.DateField()
+    
+    def __str__(self):
+        
+        return self.destination
+
 class Transportation(models.Model):
     
     number_buses = models.IntegerField(max_length=10)
     
     cost_transportation = models.IntegerField(max_length=100)
+    
+    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
     
     def __str__(self):
         
@@ -28,6 +40,8 @@ class Lunch(models.Model):
     cost_lunch = models.IntegerField(max_length=1000)
     
     satisfaction_lunch = models.IntegerField(max_length=5)
+    
+    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
     
     def __str__(self):
         
@@ -42,6 +56,8 @@ class Dinner(models.Model):
     
     satisfaction_dinner = models.IntegerField(max_length=5)
     
+    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
+    
     def __str__(self):
         
         return self.destination
@@ -54,15 +70,11 @@ class Activity(models.Model):
     
     satisfaction_activity = models.IntegerField(max_length=5)
     
+    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
+    
     def __str__(self):
         
         return self.destination
-    
-class Day(models.Model):
-    
-    trip_id= models.ForeignKey(Trip, on_delete= models.CASCADE)
-    
-    date = models.DateField()
     
     
     

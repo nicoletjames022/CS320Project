@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from .models import Transportation, Dinner, Lunch, Activities, Trips
+from .models import Transportation, Dinner, Lunch, Activities, Trips, Day
 
 class TransportationForm(forms.ModelForm):
     class Meta:
@@ -27,8 +27,14 @@ class ActivityForm(forms.ModelForm):
         fields = ['name_activity', 'cost_activity', 'satisfaction_activity']
         labels = {'name_activity': 'Name of the activity', 'cost_activity': 'Cost of activity', 'satisfaction_activity': "Rate 1-5"}
 
-class TeamForm(forms.ModelForm):
+class TripForm(forms.ModelForm):
     class Meta:
         model = Trips
         fields = ['Destination', 'Time']
         labels = {'Destination': 'Destination of trip', 'Time': 'Dates of your trip'}
+
+class DayForm(forms.ModelForm):
+    class Meta:
+        model = Day
+        fields = ['trip_id', 'date']
+        labels = {'trip_id': 'Insert trip', 'date': 'Insert date'}
