@@ -9,6 +9,14 @@
         {% comment %} {% if user.is_authenticated %} {% endcomment %}
         <p>Let's add a trip!</p> 
 
+        <form action="{% url 'voyage:trips' %}" method='post'>
+            {% csrf_token %} <!-- For security reasons, protects server -->
+            {{ form.as_p }} 
+            <div class="btn">
+                <button name="submit">Add a Trip</button> 
+            </div>
+        </form>
+
     </body>
 
 </html>

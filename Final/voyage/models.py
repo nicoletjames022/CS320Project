@@ -46,7 +46,7 @@ class Dinner(models.Model):
         
         return self.destination
     
-class Activities(models.Model):
+class Activity(models.Model):
     
     name_activity = models.CharField(max_length=30)
     
@@ -60,7 +60,10 @@ class Activities(models.Model):
     
 class Day(models.Model):
     
-    activity_ID= models.ForeignKey(Activities, on_delete= models.CASCADE)
+    trip_id= models.ForeignKey(Trip, on_delete= models.CASCADE)
+    
+    date = models.DateField()
+    
     
     
     

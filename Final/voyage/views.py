@@ -1,7 +1,5 @@
-from django.shortcuts import render
-from .models import Trip, Transportation, Dinner, Luch, Activities
-
-from .models import Trip, Day
+from django.shortcuts import render, redirect
+from .models import Trip, Transportation, Dinner, Luch, Activities, Day
 
 def home(request):
     return render(request, 'voyage/index.html')
@@ -11,11 +9,12 @@ def trips(request):
     context = {'trips': tripsList}
     return render(request, 'voyage/trips.html', context)
 
-def days(request,day_id ):
-    dayObj = Day.objects.get(id = day_id)
+def days(request, trip_id):
+   
+    tripObj = Trip.objects.get(id = trip_id)
     
-    dayList = dayObj.
-    
-    context = {'days': dayList}
+    daysList = tripObj.day_set.all()
+
+    context = {'days': daysList}
     
     return render(request, 'voyage/.html', context)
