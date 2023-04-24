@@ -6,15 +6,17 @@
     </head>
     <body>
         <h1>Welcome to Voyage</h1>
+        <p>Let's login!</p>
         {% comment %} {% if user.is_authenticated %}
         Hello, {{ user.username }}.
         {% else %}
             To access this page, you should <a href="{% url 'users:login' %}">log in</a>
-        {% endif %} {% endcomment %}
+        {% endif %}  {% endcomment %}
+
         <p>Let's add a trip!</p> 
 
         <form action="{% url 'voyage:trips' %}" method='post'>
-            {% csrf_token %} <!-- For security reasons, protects server -->
+            {% csrf_token %} 
             {{ form.as_p }} 
             <div class="btn">
                 <button name="submit">Add a Trip</button> 
