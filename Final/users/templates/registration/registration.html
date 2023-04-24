@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+    <body>
+        <h1>Voyage</h1>
+
+        <p>
+          Please insert your data:
+        </p>
+
+
+        <form action="{% url 'users:register' %}" method="post">
+          {% crsf_token %}
+
+          {{ form.as_p}}
+
+          {{ person_form.as_p}}
+
+          <button name="submit">Submit</button>
+
+          <input type="hidden" name="next" value="{% url 'users:login' %}" />
+
+        </form>
+
+    </body>
+
+</html>
