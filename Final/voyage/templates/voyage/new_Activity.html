@@ -5,14 +5,14 @@
     
     <body>
         <h1>
-        Football project
+        Plan your day!
         </h1>
         
         <p>
-        Insert data for your team: 
+        Insert here the informations for your activity: 
         </p>
         
-        <form action = "{% url 'football:addTeam' %}" method = "POST">
+        <form action = "{% url 'football:addTeam' %}" method = "POST"> 
             
             {% csrf_token %}
             
