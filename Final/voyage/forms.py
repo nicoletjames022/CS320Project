@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from .models import Trips
+from .models import Trip, Day
 
 class TripForm(forms.ModelForm):
     class Meta:
         model = Trip
         fields = ['destination', 'time']
         labels = {'destination': 'Destination of trip', 'time': 'Dates of your trip'}
-
-
 
 class DayForm(forms.ModelForm):
     class Meta:
