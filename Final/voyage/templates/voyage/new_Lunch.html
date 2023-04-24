@@ -1,0 +1,28 @@
+<html>
+
+    <head>
+    </head>
+    
+    <body>
+        <h1>
+        Plan your day!
+        </h1>
+        
+        <p>
+        Insert here the informations for your lunch: 
+        </p>
+        
+        <form action = "{% url 'football:addTeam' %}" method = "POST">
+            
+            {% csrf_token %}
+            
+            {{ form.as_p }} <!-- Displays the form, taken from context, in a “paragraph” style -->
+
+            <button>Submit!</button>
+        
+        </form>
+        
+        
+    </body>
+    
+</html>
