@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from .models import Transportation, Dinner, Lunch, Activities, Trips, Day
+from .models import Transportation, Dinner, Lunch, Activities, Trip, Day
 
 class TransportationForm(forms.ModelForm):
     class Meta:
