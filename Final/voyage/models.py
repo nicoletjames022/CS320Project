@@ -4,9 +4,7 @@ from django.db import models
 class Trip(models.Model):
     
     destination = models.CharField(max_length=30)
-    
     time = models.IntegerField(max_length=7)
-    
     def __str__(self):
         
         return self.destination

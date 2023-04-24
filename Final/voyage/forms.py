@@ -6,11 +6,13 @@ Created on Wed Mar 15 15:13:59 2023
 """
 
 from django import forms
-from .models import Trips
+from .models import Trip
 
-class TeamForm(forms.ModelForm):
+class TripForm(forms.ModelForm):
     class Meta:
-        model = Trips
-        fields = ['Destination', 'Time']
-        labels = {'Destination': 'Destination of trip', 'Time': 'Dates of your trip'}
+        model = Trip
+        fields = ['destination', 'time']
+        labels = {'destination': 'Destination of trip', 'time': 'Dates of your trip'}
+
+
 

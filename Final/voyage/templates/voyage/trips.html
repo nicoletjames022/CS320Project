@@ -12,6 +12,12 @@
         {% for trip in trips %}
         <li>{{trip}}</li>
         {% endfor %} </ul>
+
+        <form action="{% url 'voyage:addTrip' %}" method='post'>
+            {% csrf_token %} 
+            {{ form.as_p }} 
+            <button name="submit">Add a trip</button> 
+        </form>
     </body>
 
 </html>
