@@ -6,7 +6,7 @@ class TripForm(forms.ModelForm):
     class Meta:
         model = Trip
         fields = ['destination', 'time']
-        labels = {'destination': 'Destination of trip', 'time': 'Dates of your trip'}
+        labels = {'destination': 'Destination of trip', 'time': 'How many days is your trip?'}
 
 class DayForm(forms.ModelForm):
     class Meta:
