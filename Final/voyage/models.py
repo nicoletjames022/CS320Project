@@ -37,11 +37,13 @@ class Lunch(models.Model):
     
     name_restaurant_lunch = models.CharField(max_length=30)
     
-    cost_lunch = models.IntegerField(max_length=1000)
+    completed_lunch = models.BooleanField()
     
-    satisfaction_lunch = models.IntegerField(max_length=5)
+    cost_lunch = models.IntegerField(max_length=1000, default=-1)
     
-    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
+    satisfaction_lunch = models.IntegerField(max_length=5, default=-1)
+    
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
     
     def __str__(self):
         
@@ -52,11 +54,13 @@ class Dinner(models.Model):
     
     name_restaurant_dinner = models.CharField(max_length=30)
     
-    cost_dinner = models.IntegerField(max_length=100)
+    cost_dinner = models.IntegerField(max_length=1000, default=-1)
     
-    satisfaction_dinner = models.IntegerField(max_length=5)
+    completed_dinner = models.BooleanField()
     
-    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
+    satisfaction_dinner = models.IntegerField(max_length=5, default=-1)
+    
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
     
     def __str__(self):
         
@@ -66,11 +70,13 @@ class Activity(models.Model):
     
     name_activity = models.CharField(max_length=30)
     
-    cost_activity = models.IntegerField(max_length=100)
+    completed_activity = models.BooleanField()
     
-    satisfaction_activity = models.IntegerField(max_length=5)
+    cost_activity = models.IntegerField(max_length=1000, default=-1)
     
-    day = team = models.ForeignKey(Day, on_delete=models.CASCADE)
+    satisfaction_activity = models.IntegerField(max_length=5, default=-1)
+    
+    day = models.ForeignKey(Day, on_delete=models.CASCADE)
     
     def __str__(self):
         
