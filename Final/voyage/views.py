@@ -6,7 +6,8 @@ def home(request):
     return render(request, 'voyage/index.html')
 
 def trips(request):
-    tripsList = Trip.objects.filter(userOwner=request.user).order_by('id')
+    # tripsList = Trip.objects.filter(userOwner=request.user).order_by('id')
+    tripsList = Trip.objects.all()
 
     context = {'trips': tripsList}
 

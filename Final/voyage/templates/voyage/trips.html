@@ -13,7 +13,7 @@
                 {% for trip in trips %}
                 <li><a href="{% url 'voyage:showTrip' trip.id %}">{{trip}}</a></li>
                 {% endfor %} 
-            </ul>
+            </ul> 
         </div>
 
         <form action="{% url 'voyage:addTrip' %}" method='post'>

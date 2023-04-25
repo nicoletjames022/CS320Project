@@ -7,7 +7,7 @@ class Trip(models.Model):
     destination = models.CharField(max_length=30)
     time = models.IntegerField(max_length=7)
 
-    userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+    # userOwner = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         
         return self.destination
