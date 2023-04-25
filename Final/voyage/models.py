@@ -47,7 +47,6 @@ class Day(models.Model):
         
 #         return self.destination
 
-
 # class Dinner(models.Model):
     
 #     name_restaurant_dinner = models.CharField(max_length=30)
