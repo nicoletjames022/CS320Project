@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Trip, Day
-from .forms import TripForm
+from .forms import TripForm, TransportationForm, LunchForm, DinnerForm, ActivityForm
 
 def home(request):
     return render(request, 'voyage/index.html')
@@ -45,35 +45,35 @@ def days(request, trip_id):
     return render(request, 'voyage/.html', context)
 
 
-#def addTransportation(request):
-#    if request.method != 'POST':
-#        form = TransportationForm()
-#    else: 
-#        form = TransportationForm(data=request.POST)
-#        if form.is_valid():
-#            form.save()
+def addTransportation(request):
+   if request.method != 'POST':
+       form = TransportationForm()
+   else: 
+       form = TransportationForm(data=request.POST)
+       if form.is_valid():
+           form.save()
 
-#def addLunch(request):
-#    if request.method != 'POST':
-#        form = LunchForm()
-#    else: 
-#        form = LunchForm(data=request.POST)
-#        if form.is_valid():
-#            form.save()
+def addLunch(request):
+   if request.method != 'POST':
+       form = LunchForm()
+   else: 
+       form = LunchForm(data=request.POST)
+       if form.is_valid():
+           form.save()
 
-#def addDinner(request):
-#    if request.method != 'POST':
-#        form = DinnerForm()
-#    else: 
-#        form = DinnerForm(data=request.POST)
-#        if form.is_valid():
-#            form.save()
+def addDinner(request):
+   if request.method != 'POST':
+       form = DinnerForm()
+   else: 
+       form = DinnerForm(data=request.POST)
+       if form.is_valid():
+           form.save()
 
-#def addActivity(request):
-#    if request.method != 'POST':
-#        form = ActivityForm()
-#    else: 
-#        form = ActivityForm(data=request.POST)
-#        if form.is_valid():
-#            form.save()
+def addActivity(request):
+   if request.method != 'POST':
+       form = ActivityForm()
+   else: 
+       form = ActivityForm(data=request.POST)
+       if form.is_valid():
+           form.save()
 
