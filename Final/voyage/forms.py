@@ -30,8 +30,8 @@ class ActivityForm(forms.ModelForm):
 class TripForm(forms.ModelForm):
     class Meta:
         model = Trip
-        fields = ['destination', 'time']
-        labels = {'destination': 'Destination of trip', 'time': 'How many days is your trip?'}
+        fields = ['destination', 'arrivalDay', 'returnDay', 'time']
+        labels = {'destination': 'Destination of trip', 'arrivalDay': 'Arrival Day (mm/dd/yyyy)', 'returnDay': 'Return Day (mm/dd/yyyy)', 'time': 'How many days is your trip?'}
 
 class DayForm(forms.ModelForm):
     class Meta:

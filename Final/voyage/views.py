@@ -14,16 +14,15 @@ def trips(request):
     return render(request, 'voyage/trips.html', context)
 
 def addTrip(request):
+
     if request.method != 'POST':
         form = TripForm()
     else: 
         form = TripForm(data=request.POST)
         if form.is_valid():
-
+            
             new_trip = form.save(commit=False)
-
             new_trip.userOwner = request.user
-
             new_trip.save()
 
             return redirect('voyage:trips')
