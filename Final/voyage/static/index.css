@@ -17,3 +17,8 @@ p {
     text-align: center;
 
 }
+
+.Days {
+    padding: 50px;
+    outline: 5px;
+}

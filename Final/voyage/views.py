@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render, redirect
 from .models import Trip, Day
 from .forms import TripForm, TransportationForm, LunchForm, DinnerForm, ActivityForm
@@ -20,7 +21,7 @@ def addTrip(request):
     else: 
         form = TripForm(data=request.POST)
         if form.is_valid():
-            
+
             new_trip = form.save(commit=False)
             new_trip.userOwner = request.user
             new_trip.save()
@@ -30,19 +31,18 @@ def addTrip(request):
     return render(request, 'voyage/trips.html', context)
 
 def showTrip(request, trip_id):
-    tripObj = Trip.objects.get(id=trip_id); 
-    context = {'trip' : tripObj}
+    tripObj = Trip.objects.get(id=trip_id)
+    numOfDays = tripObj.time
+    days_list = list(range(1, numOfDays+1, 1))
+
+    context = {'trip' : tripObj, 'numOfDays': numOfDays, 'days_list':days_list}
     return render(request, 'voyage/showTrip.html', context)
 
-def days(request, trip_id):
-   
-    tripObj = Trip.objects.get(id = trip_id)
-    
-    daysList = tripObj.day_set.all()
 
+def showItinerary(request):
+    daysList = Trip.day_set.all()
     context = {'days': daysList}
-    
-    return render(request, 'voyage/.html', context)
+    return render (request, 'voyage/.html', context)
 
 
 def addTransportation(request):
