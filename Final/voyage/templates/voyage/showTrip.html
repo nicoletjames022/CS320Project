@@ -12,7 +12,7 @@
         {% comment %} <h1>{{ numOfDays }}</h1> {% endcomment %}
 
         {% for day in days_list %}
-        <p class="Days"> Day {{day}} </p>
+        <p class="Days"><a href="{% url 'voyage:showItinerary' %}"> Day {{day}} </a></p>
         {% endfor %}
 
 

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+    <body>
+
+        {% comment %} <h1>Day {{ day.id }}</h1> {% endcomment %}
+        <h1>Here is your itinerary</h1>
+
+
+        {% comment %} <a href="{% url 'trips' %}">Back to all trips</a> {% endcomment %}
+
+    </body>
+
+</html>

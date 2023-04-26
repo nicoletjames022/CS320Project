@@ -40,9 +40,9 @@ def showTrip(request, trip_id):
 
 
 def showItinerary(request):
-    daysList = Trip.day_set.all()
-    context = {'days': daysList}
-    return render (request, 'voyage/.html', context)
+    # dayObj = Day.objects.get(id=day_id)
+    # context = {'day': dayObj}
+    return render (request, 'voyage/showItinerary.html')
 
 
 def addTransportation(request):
