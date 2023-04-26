@@ -1,9 +1,9 @@
 from django import forms
 from .models import Person
 
-class PersonForm(forms.ModelForm):
 
-    class meta:
+class PersonForm(forms.ModelForm):
+    class Meta:
         model = Person
 
         fields = ["birthdate"]
