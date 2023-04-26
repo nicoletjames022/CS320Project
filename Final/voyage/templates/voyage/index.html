@@ -5,9 +5,13 @@
         <link rel="stylesheet" href="{% static 'index.css' %}">
     </head>
     <body>
-        <h1>Welcome to Voyage</h1>
+        <h1>Welcome {{user.username}} to Voyage</h1>
+<!--        (un comment this when done working)
+             {% if user.is_authenticated %}-->
         <p>Let's login!</p>
-        <p>-- Need to set up login -- </p>
+        <p>Click here to </p><a href="{% url 'users:register' %}">register!</a>
+        <p>Click here to </p><a href="{% url 'users:login' %}">login!</a>
+
         {% comment %} {% if user.is_authenticated %}
         Hello, {{ user.username }}.
         {% else %}
