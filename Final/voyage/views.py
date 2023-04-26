@@ -77,3 +77,12 @@ def addActivity(request):
        if form.is_valid():
            form.save()
 
+#def days(request,day_id ):
+    
+ #   dayObj = Day.objects.get(id = day_id)
+    
+  #  dayList = dayObj.
+    
+   # context = {'days': dayList}
+    
+    #return render(request, 'voyage/.html', context)

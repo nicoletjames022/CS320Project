@@ -2,6 +2,7 @@
 from django import forms
 from .models import Transportation, Dinner, Lunch, Activity, Trip, Day
 
+
 class TransportationForm(forms.ModelForm):
     class Meta:
         model = Transportation
@@ -38,3 +39,4 @@ class DayForm(forms.ModelForm):
         model = Day
         fields = ['trip_id', 'date']
         labels = {'trip_id': 'Insert trip', 'date': 'Insert date'}
+       

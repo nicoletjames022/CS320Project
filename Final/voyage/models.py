@@ -1,12 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+#from django.contrib.admin.widgets import AdminDateWidget
+#from django.forms.fields import DateField
+#import forms
 
 
 class Trip(models.Model):
     destination = models.CharField(max_length=30)
     arrivalDay = models.DateField(auto_now_add=False, auto_now=False, blank=True)
     returnDay = models.DateField(auto_now_add=False, auto_now=False, blank=True)
+   # trip_length= DateField(widget=AdminDateWidget)
+   # start_date=forms.DateField(widget = forms.SelectDateWidget())
+   # end_date=forms.DateField(widget = forms.SelectDateWidget())
     time = models.IntegerField(max_length=7)
     
     def __str__(self):
