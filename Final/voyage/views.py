@@ -52,6 +52,10 @@ def addTransportation(request):
        form = TransportationForm(data=request.POST)
        if form.is_valid():
            form.save()
+           
+           return redirect('voyage:showItenary')
+   context = {'form': form} 
+   return render(request, 'trips/showItinerary/new_Transportation.html', context)
 
 def addLunch(request):
    if request.method != 'POST':
@@ -60,6 +64,10 @@ def addLunch(request):
        form = LunchForm(data=request.POST)
        if form.is_valid():
            form.save()
+           
+           return redirect('voyage:showItenary')
+   context = {'form': form} 
+   return render(request, 'trips/showItinerary/new_Lunch.html', context)
 
 def addDinner(request):
    if request.method != 'POST':
@@ -68,6 +76,10 @@ def addDinner(request):
        form = DinnerForm(data=request.POST)
        if form.is_valid():
            form.save()
+           
+           return redirect('voyage:showItenary')
+   context = {'form': form} 
+   return render(request, 'trips/showItinerary/new_Dinner.html', context)
 
 def addActivity(request):
    if request.method != 'POST':
@@ -76,6 +88,10 @@ def addActivity(request):
        form = ActivityForm(data=request.POST)
        if form.is_valid():
            form.save()
+           
+           return redirect('voyage:showItenary')
+   context = {'form': form} 
+   return render(request, 'trips/showItinerary/new_Activity.html', context)
 
 #def days(request,day_id ):
     
