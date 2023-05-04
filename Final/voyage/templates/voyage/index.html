@@ -14,13 +14,7 @@
             <p>Click here to </p><a href="{% url 'users:logout' %}">logout!</a>
         </div>
 
-        {% comment %} {% if user.is_authenticated %}
-        Hello, {{ user.username }}.
-        {% else %}
-            To access this page, you should <a href="{% url 'users:login' %}">log in</a>
-        {% endif %}  {% endcomment %}
-
-        {% comment %} <p>Let's add a trip!</p>  {% endcomment %}
+        {% comment %} {% if user.is_authenticated %} {% endcomment %}
 
         <form action="{% url 'voyage:trips' %}" method='post'>
             {% csrf_token %} 

@@ -16,11 +16,12 @@ p {
   
 .btn {
 
-    padding: 50px;
+    /* padding: 50px; */
     text-align: center;
 
 }
 
 .Days {
-    padding: 30px;
+    padding: 50px;
+    text-align: center;
 }

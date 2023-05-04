@@ -8,13 +8,13 @@
         <h1>Trips</h1>
 
         <h4>Here are your up coming trips</h4>
-        <div>
-            <ul>
-                {% for trip in trips %}
-                <li><a href="{% url 'voyage:showTrip' trip.id %}">{{trip}}</a></li>
-                {% endfor %} 
-            </ul> 
+        <div class="btn">
+            {% for trip in trips %}
+            <li><a href="{% url 'voyage:showTrip' trip.id %}">{{trip}}</a></li>
+            {% endfor %} 
         </div>
+
+        <br></br>
 
         <form action="{% url 'voyage:addTrip' %}" method='post'>
             {% csrf_token %} 

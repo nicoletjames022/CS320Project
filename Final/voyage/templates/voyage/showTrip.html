@@ -11,9 +11,11 @@
 
         {% comment %} <h1>{{ numOfDays }}</h1> {% endcomment %}
 
-        {% for day in days_list %}
-        <p class="Days"><a href="{% url 'voyage:showItinerary' %}"> Day {{day}} </a></p>
-        {% endfor %}
+        <div class="btn">
+            {% for day in days_list %}
+            <p ><a href="{% url 'voyage:showItinerary' %}"> Day {{day}} </a></p>
+            {% endfor %}
+        </div>    
 
 
         {% comment %} <a href="{% url 'trips' %}">Back to all trips</a> {% endcomment %}
