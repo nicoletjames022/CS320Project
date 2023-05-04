@@ -55,7 +55,7 @@ def new_Transportation(request):
            
            return redirect('voyage:showItenary')
    context = {'form': form} 
-   return render(request, 'trips/showItinerary/new_Transportation.html', context)
+   return render(request, 'voyage/new_Transportation.html', context)
 
 def new_Lunch(request):
    if request.method != 'POST':
@@ -67,7 +67,7 @@ def new_Lunch(request):
            
            return redirect('voyage:showItenary')
    context = {'form': form} 
-   return render(request, 'trips/showItinerary/new_Lunch.html', context)
+   return render(request, 'voyage/new_Lunch.html', context)
 
 def new_Dinner(request):
    if request.method != 'POST':
@@ -79,7 +79,7 @@ def new_Dinner(request):
            
            return redirect('voyage:showItenary')
    context = {'form': form} 
-   return render(request, 'trips/showItinerary/new_Dinner.html', context)
+   return render(request, 'voyage/new_Dinner.html', context)
 
 def new_Activity(request):
    if request.method != 'POST':
@@ -91,7 +91,7 @@ def new_Activity(request):
            
            return redirect('voyage:showItenary')
    context = {'form': form} 
-   return render(request, 'trips/showItinerary/new_Activity.html', context)
+   return render(request, 'voyage/new_Activity.html', context)
 
 def Activities(request):
     # tripsList = Trip.objects.filter(userOwner=request.user).order_by('id')
