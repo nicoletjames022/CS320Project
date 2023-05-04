@@ -1,9 +1,11 @@
 <html>
 
     <head>
+    
     </head>
     
     <body>
+    
         <h1>
         Plan your day!
         </h1>
@@ -12,7 +14,7 @@
         Insert here the informations for your activity: 
         </p>
         
-        <form action = "{% url 'voyage:addActivity' %}" method = "POST"> 
+        <form action = "{% url 'voyage:new_Activity' %}" method = "POST"> 
             
             {% csrf_token %}
             

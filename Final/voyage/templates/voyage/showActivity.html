@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<!--        <link rel="stylesheet" href="{% static 'index.css' %}">-->
+    </head>
+    <body>
+
+        <h1>{{ trip.destination }}</h1>
+        <h4>Please select which day to access in your itinerary</h4>
+
+        {% comment %} <h1>{{ numOfDays }}</h1> {% endcomment %}
+
+        {% for day in days_list %}
+        <p class="Days"><a href="{% url 'voyage:showItinerary' %}"> Day {{day}} </a></p>
+        {% endfor %}
+
+
+        {% comment %} <a href="{% url 'trips' %}">Back to all trips</a> {% endcomment %}
+
+    </body>
+
+</html>

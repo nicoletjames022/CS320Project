@@ -8,9 +8,30 @@
 
         {% comment %} <h1>Day {{ day.id }}</h1> {% endcomment %}
         <h1>Here is your itinerary</h1>
-
-
-        {% comment %} <a href="{% url 'trips' %}">Back to all trips</a> {% endcomment %}
+        
+        {% for day in days_list %}
+        <p class="Lunches"><a href="{% url 'voyage:showLunch' %}"> Lunch {{lunch}} </a></p>
+        {% endfor %}
+        
+        {% for day in days_list %}
+        <p class="Dinners"><a href="{% url 'voyage:showDinner' %}"> Dinner {{dinner}} </a></p>
+        {% endfor %}
+        
+        {% for day in days_list %}
+        <p class="Activities"><a href="{% url 'voyage:showActivity' %}"> Activity {{activity}} </a></p>
+        {% endfor %}
+        
+        {% for day in days_list %}
+        <p class="Transportations"><a href="{% url 'voyage:showTransportation' %}"> Transportation {{Transportation}} </a></p>
+        {% endfor %}
+        
+        <p>Click here to <a href="{% url 'voyage:new_Lunch' %}">add a lunch!</a></p>
+        
+        <p>Click here to <a href="{% url 'voyage:new_Dinner' %}">add a dinner!</a></p>
+        
+        <p>Click here to <a href="{% url 'voyage:new_Transportation' %}">add transportation!</a></p>
+        
+        <p>Click here to <a href="{% url 'voyage:new_Activity' %}">add an activity!</a></p>
 
     </body>
 

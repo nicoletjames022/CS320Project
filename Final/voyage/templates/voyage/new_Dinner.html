@@ -12,7 +12,7 @@
         Insert here the informations for dinner:
         </p>
         
-        <form action = "{% url 'voyage:addDinner' %}" method = "POST">
+        <form action = "{% url 'voyage:new_Dinner' %}" method = "POST">
             
             {% csrf_token %}
             
