@@ -7,9 +7,12 @@
     <body>
         <h1>Welcome {{user.username}} to Voyage</h1>
         <p>Let's login!</p>
-        <p>Click here to </p><a href="{% url 'users:register' %}">register!</a>
-        <p>Click here to </p><a href="{% url 'users:login' %}">login!</a>
-        <p>Click here to </p><a href="{% url 'users:logout' %}">logout!</a>
+        <br></br>
+        <div class="btn">
+            <p>Click here to </p><a href="{% url 'users:register' %}">register!</a>
+            <p>Click here to </p><a href="{% url 'users:login' %}">login!</a>
+            <p>Click here to </p><a href="{% url 'users:logout' %}">logout!</a>
+        </div>
 
         {% comment %} {% if user.is_authenticated %}
         Hello, {{ user.username }}.
