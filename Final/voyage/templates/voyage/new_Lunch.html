@@ -17,6 +17,8 @@
             {% csrf_token %}
             
             {{ form.as_p }} <!-- Displays the form, taken from context, in a “paragraph” style -->
+            
+            <input type="hidden" name="day" value={% day %}
 
             <button>Submit!</button>
         
