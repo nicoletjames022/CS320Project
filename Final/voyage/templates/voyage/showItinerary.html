@@ -21,8 +21,8 @@
         <p class="Activities"><a href="{% url 'voyage:showActivity' %}"> Activity {{activity}} </a></p>
         {% endfor %}
         
-        {% for day in days_list %}
-        <p class="Transportations"><a href="{% url 'voyage:showTransportation' %}"> Transportation {{Transportation}} </a></p>
+        {% for transportation in transportation_list %}
+        <p><a href="{% url 'voyage:showTransportation' %}"> Transportation {{Transportation}} </a></p>
         {% endfor %}
         
         <p>Click here to <a href="{% url 'voyage:new_Lunch' %}">add a lunch!</a></p>

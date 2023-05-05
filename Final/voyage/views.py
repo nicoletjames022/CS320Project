@@ -51,7 +51,7 @@ def new_Transportation(request):
        if form.is_valid():
            form.save()
            
-           return redirect('voyage:showItenary')
+           return redirect('voyage:showItinerary')
    context = {'form': form} 
    return render(request, 'voyage/new_Transportation.html', context)
 
@@ -65,7 +65,7 @@ def new_Lunch(request):
            form.save(commit=False)
            
            
-           return redirect('voyage:showItenary')
+           return redirect('voyage:showItinerary')
    context = {'form': form} 
    return render(request, 'voyage/new_Lunch.html', context)
 
@@ -78,7 +78,7 @@ def new_Dinner(request):
        if form.is_valid():
            form.save()
            
-           return redirect('voyage:showItenary')
+           return redirect('voyage:showItinerary')
    context = {'form': form} 
    return render(request, 'voyage/new_Dinner.html', context)
 
@@ -90,13 +90,12 @@ def new_Activity(request):
        if form.is_valid():
            form.save()
            
-           return redirect('voyage:showItenary')
+           return redirect('voyage:showItinerary')
    context = {'form': form} 
-   return render(request, 'voyage/new_Activity.html', context)
+   return render(request, 'new_Activity.html', context)
 
 
 def Activities(request):
-    # tripsList = Trip.objects.filter(userOwner=request.user).order_by('id')
     activitiesList = Activity.objects.all()
 
     context = {'activities': activitiesList}
