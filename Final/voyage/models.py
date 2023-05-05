@@ -29,9 +29,6 @@ class Day(models.Model):
         
         return self.destination
 
-
-
-
 class Transportation(models.Model):
     
     number_buses = models.IntegerField(max_length=10)

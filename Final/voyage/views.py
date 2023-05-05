@@ -38,12 +38,10 @@ def showTrip(request, trip_id):
     context = {'trip' : tripObj, 'numOfDays': numOfDays, 'days_list':days_list}
     return render(request, 'voyage/showTrip.html', context)
 
-
 def showItinerary(request):
     # dayObj = Day.objects.get(id=day_id)
     # context = {'day': dayObj}
     return render (request, 'voyage/showItinerary.html')
-
 
 def new_Transportation(request):
    if request.method != 'POST':
@@ -57,17 +55,20 @@ def new_Transportation(request):
    context = {'form': form} 
    return render(request, 'voyage/new_Transportation.html', context)
 
+
 def new_Lunch(request):
    if request.method != 'POST':
        form = LunchForm()
    else: 
        form = LunchForm(data=request.POST)
        if form.is_valid():
-           form.save()
+           form.save(commit=False)
+           
            
            return redirect('voyage:showItinerary')
    context = {'form': form} 
    return render(request, 'voyage/new_Lunch.html', context)
+
 
 def new_Dinner(request):
    if request.method != 'POST':
@@ -92,6 +93,7 @@ def new_Activity(request):
            return redirect('voyage:showItinerary')
    context = {'form': form} 
    return render(request, 'new_Activity.html', context)
+
 
 def Activities(request):
     activitiesList = Activity.objects.all()
@@ -123,6 +125,26 @@ def Transportations(request):
     context = {'transportations': transportationsList}
 
     return render(request, 'voyage/trips/showTrip/showItinerary.html', context)
+
+def showActivity(request):
+    # dayObj = Day.objects.get(id=day_id)
+    # context = {'day': dayObj}
+    return render (request, 'voyage/trips/showItinerary/showActivity/.html')
+
+def showDinner(request):
+    # dayObj = Day.objects.get(id=day_id)
+    # context = {'day': dayObj}
+    return render (request, 'voyage/trips/showItinerary/showDinner.html')
+
+def showLunch(request):
+    # dayObj = Day.objects.get(id=day_id)
+    # context = {'day': dayObj}
+    return render (request, 'voyage/trips/showItinerary/showLunch.html')
+
+def showTransportation(request):
+    # dayObj = Day.objects.get(id=day_id)
+    # context = {'day': dayObj}
+    return render (request, 'voyage/trips/showItinerary/showTransportation/.html')
 
 #def days(request,day_id ):
     

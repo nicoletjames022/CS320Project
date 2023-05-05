@@ -6,17 +6,9 @@
     </head>
     <body>
 
-        <h1>{{ trip.destination }}</h1>
-        <h4>Please select which day to access in your itinerary</h4>
+        <h1>{{ activity.name_restaurant_dinner }}</h1>
 
-        {% comment %} <h1>{{ numOfDays }}</h1> {% endcomment %}
-
-        {% for day in days_list %}
-        <p class="Days"><a href="{% url 'voyage:showItinerary' %}"> Day {{day}} </a></p>
-        {% endfor %}
-
-
-        {% comment %} <a href="{% url 'trips' %}">Back to all trips</a> {% endcomment %}
+        {% comment %} <a href="{% url 'showItinerary' %}">Back to itinerary</a> {% endcomment %}
 
     </body>
 
